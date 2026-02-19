@@ -215,10 +215,6 @@ html[data-theme="light"] h1 {
   box-shadow: 0 8px 18px rgba(12, 19, 56, 0.28);
 }
 
-.project-detail a.btn-primary {
-  color: #392d00;
-}
-
 .btn-primary:hover {
   filter: brightness(1.02);
 }
@@ -320,7 +316,7 @@ html[data-theme="light"] h3 {
   line-height: 1.5;
 }
 
-.project-body a {
+.project-body a:not(.btn) {
   color: var(--gold);
   font-weight: 700;
   text-underline-offset: 3px;
@@ -349,13 +345,13 @@ html[data-theme="light"] h3 {
   color: var(--mist);
 }
 
-.project-detail a {
+.project-detail a:not(.btn) {
   color: var(--gold);
   font-weight: 700;
   text-underline-offset: 3px;
 }
 
-html[data-theme="light"] .project-detail a {
+html[data-theme="light"] .project-detail a:not(.btn) {
   color: var(--accent);
 }
 
