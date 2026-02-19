@@ -45,9 +45,7 @@
         <article class="project-detail">
           <p>
             <strong>Email:</strong>
-            <a href="mailto:glenn.colombie@outlook.be"
-              >glenn.colombie@outlook.be</a
-            >
+            Hidden to prevent spam. Please use the form below.
           </p>
           <p>
             <strong>GitHub:</strong>
@@ -64,17 +62,24 @@
 
           <h3>Send a message</h3>
           <form
+            id="contact-form"
             class="contact-form"
             action="https://formsubmit.co/glenn.colombie@outlook.be"
             method="POST"
-            data-mail-fallback="glenn.colombie@outlook.be"
           >
             <input
               type="hidden"
               name="_subject"
               value="New portfolio contact"
             />
-            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_captcha" value="true" />
+            <input
+              type="text"
+              name="_honey"
+              tabindex="-1"
+              autocomplete="off"
+              style="display: none"
+            />
             <input type="hidden" name="_next" value="" />
 
             <label for="name">Name</label>
@@ -93,11 +98,11 @@
             Best for: backend roles, API-focused freelance work, and practical
             software collaborations.
           </p>
-          <p class="contact-note">
+          <!-- <p class="contact-note">
             This form is connected via FormSubmit. The first submission may
             require email activation. You can swap this action URL to Formspree
             at any time.
-          </p>
+          </p> -->
         </article>
       </section>
     </main>

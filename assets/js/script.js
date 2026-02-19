@@ -219,7 +219,7 @@
   }
 
   function wireContactFormFallback() {
-    const form = document.querySelector("form[data-mail-fallback]");
+    const form = document.querySelector("#contact-form");
     if (!form) {
       return;
     }
@@ -231,26 +231,6 @@
         nextInput.value = `${window.location.origin}/pages/thanks.html`;
       }
     }
-
-    form.addEventListener("submit", (event) => {
-      if (!action.includes("your-form-id")) {
-        return;
-      }
-
-      event.preventDefault();
-      const mail = form.getAttribute("data-mail-fallback") || "";
-      const name = form.querySelector("#name")?.value?.trim() || "";
-      const email = form.querySelector("#email")?.value?.trim() || "";
-      const message = form.querySelector("#message")?.value?.trim() || "";
-
-      const subject = encodeURIComponent(
-        `Portfolio contact from ${name || "visitor"}`,
-      );
-      const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-      );
-      window.location.href = `mailto:${mail}?subject=${subject}&body=${body}`;
-    });
   }
 
   async function init() {
