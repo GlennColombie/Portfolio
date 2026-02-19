@@ -227,8 +227,12 @@
     const action = form.getAttribute("action") || "";
     if (action.includes("formsubmit.co")) {
       const nextInput = form.querySelector("input[name='_next']");
-      if (nextInput && window.location.origin) {
-        nextInput.value = `${window.location.origin}/pages/thanks.html`;
+      if (nextInput) {
+        try {
+          nextInput.value = new URL("./thanks.html", window.location.href).href;
+        } catch {
+          nextInput.value = "./thanks.html";
+        }
       }
     }
   }
