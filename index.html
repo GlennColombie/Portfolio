@@ -3,50 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css" />
+    <title>Glenn Colombie | Portfolio</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Nunito:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <h1>Glenn Colombie</h1>
-    <h2>My Recent Work</h2>
-    <h3>
-      Here are a few projects I've been working on (recently), Want to see more?
-      <!-- <a href="mailto:glenn.colombie@outlook.be">E-mail me</a>w -->
-    </h3>
-    <hr />
-    <div id="projects">
-      <div id="project">
-        <h4>
-          <a href="./public/movie-ranking.html">Movie Ranking Project</a>
-        </h4>
-        <img
-          src="./assets/images/movie-ranking.png"
-          alt="Movie Ranking Project"
-          height="200"
-        />
-      </div>
+    <div class="page-glow"></div>
 
-      <div id="project">
-        <h4>
-          <a href="./public/birthday-invite.html">Birthday Invite Project</a>
-        </h4>
-        <img
-          src="./assets/images/birthday-invite.png"
-          alt="Birthday Invite Project"
-          height="200"
-        />
+    <header class="hero">
+      <nav class="nav">
+        <a href="./pages/about.html">Who am I?</a>
+        <a href="./pages/recent-work.html">Recent work</a>
+        <a href="./pages/contact.html">Contact</a>
+      </nav>
+
+      <div class="hero-content">
+        <p class="eyebrow">Creative Web Portfolio</p>
+        <h1>Glenn Colombie</h1>
+        <p class="intro">
+          I design and build digital experiences with a magical touch —
+          combining clean code, storytelling, and modern UI to bring ideas to
+          life. Bonus points for a little Nick Wilde energy: clever, smooth, and
+          impossible to ignore.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="./pages/recent-work.html"
+            >Explore Projects</a
+          >
+          <a class="btn btn-ghost" href="mailto:glenn.colombie@outlook.be"
+            >Send an Owl</a
+          >
+        </div>
       </div>
-    </div>
-    <hr />
+    </header>
+
+    <main>
+      <section class="showcase" aria-labelledby="featured-title">
+        <h2 id="featured-title">Featured Adventures</h2>
+        <div class="projects">
+          <article class="project-card">
+            <div class="project-placeholder" aria-hidden="true">✨</div>
+            <div class="project-body">
+              <h3>Disney Pins Monitor</h3>
+              <p>
+                Python-based monitor that tracks Disney Store EU pins and sends
+                Discord notifications for stock and price changes.
+              </p>
+              <a href="./pages/pins.html">View details</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
     <footer>
-      <a href="./public/about.html">About Me</a>
-      <a href="./public/contact.html">Contact Me</a>
+      <p>© 2026 Glenn Colombie · Dream. Build. Ship.</p>
+      <div class="socials">
+        <a href="https://github.com/GlennColombie" aria-label="GitHub profile">
+          <img src="./assets/images/icons8-github-50.png" alt="GitHub" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/glenn-colombie-ab1a78243/"
+          aria-label="LinkedIn profile"
+        >
+          <img src="./assets/images/icons8-linkedin-50.png" alt="LinkedIn" />
+        </a>
+        <a
+          href="https://steamcommunity.com/id/TheBearDoctor/"
+          aria-label="Steam profile"
+        >
+          <img src="./assets/images/icons8-steam-50.png" alt="Steam" />
+        </a>
+      </div>
     </footer>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
