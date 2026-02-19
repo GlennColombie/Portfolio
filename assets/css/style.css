@@ -180,6 +180,11 @@ h1 {
   text-shadow: 0 0 22px rgba(249, 214, 118, 0.2);
 }
 
+html[data-theme="light"] h1 {
+  color: #243055;
+  text-shadow: none;
+}
+
 .intro {
   max-width: 660px;
   margin: 0 auto;
@@ -206,6 +211,20 @@ h1 {
 .btn-primary {
   background: linear-gradient(135deg, #f9d676, #ffeab1);
   color: #392d00;
+  border: 1px solid rgba(57, 45, 0, 0.25);
+  box-shadow: 0 8px 18px rgba(12, 19, 56, 0.28);
+}
+
+.project-detail a.btn-primary {
+  color: #392d00;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.02);
+}
+
+html[data-theme="light"] .btn-primary {
+  box-shadow: 0 6px 14px rgba(68, 98, 191, 0.18);
 }
 
 .btn-ghost {
@@ -223,6 +242,10 @@ h2 {
   margin-top: 0;
   color: #fff1c4;
   font-size: clamp(1.5rem, 4vw, 2.3rem);
+}
+
+html[data-theme="light"] h2 {
+  color: #2b3761;
 }
 
 .projects {
@@ -286,6 +309,10 @@ html[data-theme="light"] .project-detail {
 h3 {
   margin: 0 0 0.4rem;
   color: #fff8de;
+}
+
+html[data-theme="light"] h3 {
+  color: #32406f;
 }
 
 .project-body p {
@@ -400,6 +427,18 @@ html[data-theme="light"] .project-detail a {
   background: rgba(237, 242, 255, 0.08);
   color: var(--text);
   font-family: inherit;
+}
+
+html[data-theme="light"] .contact-form input,
+html[data-theme="light"] .contact-form textarea {
+  border-color: rgba(68, 98, 191, 0.5);
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--text);
+}
+
+html[data-theme="light"] .contact-form input::placeholder,
+html[data-theme="light"] .contact-form textarea::placeholder {
+  color: rgba(31, 42, 73, 0.72);
 }
 
 .contact-note {
