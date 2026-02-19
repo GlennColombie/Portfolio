@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Disney Pins Monitor project: Python, Flask, SQLite, scraping, Discord notifications, and dashboard monitoring."
+    />
     <title>Pins | Glenn Colombie</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+    <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,10 +19,11 @@
     />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="page-glow"></div>
 
     <header class="hero">
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary">
         <a href="../index.html">Home</a>
         <a href="./about.html">Who am I?</a>
         <a href="./recent-work.html">Recent work</a>
@@ -34,7 +41,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <section class="showcase" aria-labelledby="project-title">
         <h2 id="project-title">Project Overview</h2>
 

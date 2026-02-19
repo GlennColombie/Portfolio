@@ -92,6 +92,90 @@
     });
   }
 
+  function createProjectCard(project, inPagesDirectory) {
+    const article = document.createElement("article");
+    article.className = "project-card";
+
+    if (project.image) {
+      const image = document.createElement("img");
+      image.src = inPagesDirectory
+        ? `../assets/images/${project.image}`
+        : `./assets/images/${project.image}`;
+      image.alt = `${project.title} preview`;
+      article.appendChild(image);
+    } else {
+      const placeholder = document.createElement("div");
+      placeholder.className = "project-placeholder";
+      placeholder.setAttribute("aria-hidden", "true");
+      placeholder.textContent = project.placeholder || "✨";
+      article.appendChild(placeholder);
+    }
+
+    const body = document.createElement("div");
+    body.className = "project-body";
+
+    const heading = document.createElement("h3");
+    heading.textContent = project.title;
+
+    const description = document.createElement("p");
+    description.textContent = project.description;
+
+    const link = document.createElement("a");
+    link.href = inPagesDirectory
+      ? `./${project.slug}.html`
+      : `./pages/${project.slug}.html`;
+    link.textContent = project.cta;
+
+    body.append(heading, description, link);
+    article.appendChild(body);
+    return article;
+  }
+
+  async function renderProjectsFromData() {
+    const containers = document.querySelectorAll(
+      ".projects[data-project-source]",
+    );
+    if (!containers.length) {
+      return;
+    }
+
+    const inPagesDirectory = window.location.pathname.includes("/pages/");
+    const source = inPagesDirectory
+      ? "../assets/data/projects.json"
+      : "./assets/data/projects.json";
+
+    try {
+      const response = await fetch(source);
+      if (!response.ok) {
+        return;
+      }
+
+      const projects = await response.json();
+      if (!Array.isArray(projects) || !projects.length) {
+        return;
+      }
+
+      containers.forEach((container) => {
+        const filter = container.getAttribute("data-filter") || "all";
+        const data =
+          filter === "featured"
+            ? projects.filter((project) => project.featured)
+            : projects;
+
+        if (!data.length) {
+          return;
+        }
+
+        container.innerHTML = "";
+        data.forEach((project) => {
+          container.appendChild(createProjectCard(project, inPagesDirectory));
+        });
+      });
+    } catch {
+      // Keep static HTML fallback if JSON fetch fails.
+    }
+  }
+
   function setupRevealAnimations() {
     const targets = document.querySelectorAll(".project-card, .project-detail");
     if (!targets.length) {
@@ -134,10 +218,44 @@
     );
   }
 
-  setTheme(getInitialTheme());
-  injectThemeToggle();
-  markActiveNavLink();
-  prioritizeMonitorProject();
-  setupRevealAnimations();
-  updateFooterYear();
+  function wireContactFormFallback() {
+    const form = document.querySelector("form[data-mail-fallback]");
+    if (!form) {
+      return;
+    }
+
+    form.addEventListener("submit", (event) => {
+      const action = form.getAttribute("action") || "";
+      if (!action.includes("your-form-id")) {
+        return;
+      }
+
+      event.preventDefault();
+      const mail = form.getAttribute("data-mail-fallback") || "";
+      const name = form.querySelector("#name")?.value?.trim() || "";
+      const email = form.querySelector("#email")?.value?.trim() || "";
+      const message = form.querySelector("#message")?.value?.trim() || "";
+
+      const subject = encodeURIComponent(
+        `Portfolio contact from ${name || "visitor"}`,
+      );
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+      );
+      window.location.href = `mailto:${mail}?subject=${subject}&body=${body}`;
+    });
+  }
+
+  async function init() {
+    setTheme(getInitialTheme());
+    injectThemeToggle();
+    markActiveNavLink();
+    await renderProjectsFromData();
+    prioritizeMonitorProject();
+    setupRevealAnimations();
+    wireContactFormFallback();
+    updateFooterYear();
+  }
+
+  init();
 })();

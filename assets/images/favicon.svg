@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Portfolio Fox Icon">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffd77a"/>
+      <stop offset="1" stop-color="#ff9f66"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="#1b2055"/>
+  <path fill="url(#g)" d="M12 20l10-8 10 10 10-10 10 8-4 24-16 8-16-8z"/>
+  <circle cx="25" cy="31" r="2" fill="#1b2055"/>
+  <circle cx="39" cy="31" r="2" fill="#1b2055"/>
+  <path d="M28 39c2 2 6 2 8 0" stroke="#1b2055" stroke-width="2" fill="none" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,11 @@
+[
+  {
+    "slug": "pins",
+    "title": "Disney Pins Monitor",
+    "description": "Python-based monitor that tracks Disney Store EU pins and sends Discord notifications for stock and price changes.",
+    "cta": "View details",
+    "featured": true,
+    "image": null,
+    "placeholder": "✨"
+  }
+]

@@ -39,6 +39,22 @@ body {
   overflow-x: hidden;
 }
 
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  background: #fff;
+  color: #111;
+  padding: 0.7rem 1rem;
+  border-radius: 0.6rem;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
 html[data-theme="light"] body {
   background:
     radial-gradient(circle at 20% 20%, #a7b9ff 0%, transparent 35%),
@@ -103,6 +119,14 @@ footer {
 .nav a:hover {
   transform: translateY(-2px);
   background: rgba(249, 214, 118, 0.18);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .nav a.active {
@@ -300,6 +324,34 @@ h3 {
 
 .project-detail ul {
   padding-left: 1.2rem;
+}
+
+.contact-form {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.contact-form label {
+  font-weight: 700;
+  color: var(--mist);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid rgba(158, 208, 255, 0.42);
+  border-radius: 0.7rem;
+  padding: 0.7rem 0.8rem;
+  background: rgba(237, 242, 255, 0.08);
+  color: var(--text);
+  font-family: inherit;
+}
+
+.contact-note {
+  margin-top: 0.65rem;
+  font-size: 0.93rem;
+  color: var(--mist);
 }
 
 footer {

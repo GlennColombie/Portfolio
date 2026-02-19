@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact Glenn Colombie for collaboration, freelance opportunities, and project inquiries."
+    />
     <title>Contact | Glenn Colombie</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+    <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,10 +19,11 @@
     />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="page-glow"></div>
 
     <header class="hero">
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary">
         <a href="../index.html">Home</a>
         <a href="./about.html">Who am I?</a>
         <a href="./recent-work.html">Recent work</a>
@@ -31,15 +38,58 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <section class="showcase" aria-labelledby="contact-title">
         <h2 id="contact-title">Details</h2>
         <article class="project-detail">
-          <p><strong>Email:</strong> glenn.colombie@outlook.be</p>
-          <p><strong>GitHub:</strong> https://github.com/GlennColombie</p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:glenn.colombie@outlook.be"
+              >glenn.colombie@outlook.be</a
+            >
+          </p>
+          <p>
+            <strong>GitHub:</strong>
+            <a href="https://github.com/GlennColombie"
+              >github.com/GlennColombie</a
+            >
+          </p>
           <p>
             <strong>LinkedIn:</strong>
-            https://www.linkedin.com/in/glenn-colombie-ab1a78243/
+            <a href="https://www.linkedin.com/in/glenn-colombie-ab1a78243/"
+              >linkedin.com/in/glenn-colombie-ab1a78243/</a
+            >
+          </p>
+
+          <h3>Send a message</h3>
+          <form
+            class="contact-form"
+            action="https://formsubmit.co/glenn.colombie@outlook.be"
+            method="POST"
+            data-mail-fallback="glenn.colombie@outlook.be"
+          >
+            <input
+              type="hidden"
+              name="_subject"
+              value="New portfolio contact"
+            />
+            <input type="hidden" name="_captcha" value="false" />
+
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <button class="btn btn-primary" type="submit">Send message</button>
+          </form>
+          <p class="contact-note">
+            This form is connected via FormSubmit. The first submission may
+            require email activation. You can swap this action URL to Formspree
+            at any time.
           </p>
         </article>
       </section>
